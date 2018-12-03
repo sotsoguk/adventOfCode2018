@@ -8,4 +8,6 @@ In order to get back to coding and solving problems, i will try to solve the pro
 | --------------------------------------------- | -------------------------- | --- |
 | [Day 01](https://adventofcode.com/2018/day/1) | [day01.py](day01/day01.py) |     |
 | [Day 02](https://adventofcode.com/2018/day/2) | [day02.py](day02/day02.py) |     |
-| [Day 03](https://adventofcode.com/2018/day/3) |                            |     |
+| [Day 03](https://adventofcode.com/2018/day/3) | [day03.py](day03/day03.py) |     |
+| [Day 04](https://adventofcode.com/2018/day/4) | [day04.py](day03/day04.py) |     |
+

@@ -34,6 +34,8 @@ for c in input:
     else:
           stack.push(c)
 
+# speed up by using the collapsed polymer output of part1 as input for part2
+input = stack.items
 print('Part1:\t')
 print(stack.size())
 

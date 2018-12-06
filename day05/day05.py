@@ -17,63 +17,46 @@ class Stack:
     def size(self):
         return len(self.items)
     
+import operator
 
-input = "dabAcCaCBAcCcaDA"
-input = "dabAaCBAcCcaDA"
 input=[]
+#input = open("input.txt").read().splitlines()[0]
 with open('input.txt') as f:
     input = f.readlines()
 
-
-#input = open("input.txt").read().splitlines()[0]
 input = input[0].strip()
-a="hallo\n"
-print(a)
-print(a.strip())
-#print(len(input))
 stack = Stack()
-
 for c in input:
     if stack.isEmpty():
         stack.push(c)
-    
-    elif (c.islower() and (c.upper() == stack.peek())) or (c.isupper() and (c.lower() == stack.peek())):
+    elif str.swapcase(c) == stack.peek():
           stack.pop()
     else:
           stack.push(c)
 
-print(''.join(stack.items))
-print('Part1')
-#polyToDelete = ['aA', 'bB','cC','dD','eE','fF','gG','hH','iI','jJ','kK','lL','mM','nN','oO','pP','qQ','rR','sS','tT','uU','vV','wW','xX','yY','zZ']
+print('Part1:\t')
+print(stack.size())
+
 polyList = []
+values = {}
 for i in range(ord('a'),ord('z')+1):
     polyList.append(''.join([chr(i),chr(i).upper()]))
 stack = Stack()
-#for c in input:
-#    if c in polyToDelete:
-#        print(c)
-#part2
 for deletePoly in polyList:
     stack = Stack()
-    #print(deletePoly)
     for c in input:
        # print(stack.items)
         if c in deletePoly:
             pass
         elif stack.isEmpty():
             stack.push(c)
-
-        
-        elif (c.islower() and (c.upper() == stack.peek())) or (c.isupper() and (c.lower() == stack.peek())):
+        elif str.swapcase(c) == stack.peek():
               stack.pop()
         else:
               stack.push(c)
-    print(deletePoly + " " + str(stack.size()))
+    #print(deletePoly + " " + str(stack.size()))
+    values[deletePoly] = stack.size()
 
-    
-    
-
-
-print(len(stack.items))
-#while not stack.isEmpty():
-#    print(stack.pop())
+minLength = min(values.items(),key=operator.itemgetter(1))[1]
+print("Part2:\t")
+print(minLength)

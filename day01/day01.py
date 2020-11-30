@@ -1,6 +1,6 @@
 import itertools as it
 
-with open('input.txt') as f:
+with open('day01/input.txt') as f:
     lines = f.readlines()
 
 lines = [int(x.strip()) for x in lines]
